@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+        
+        table.center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    {% csrf_token %}
+    <h3 style="color:chartreuse">
+        Your appointments </h3>
+
+    <table class="center">
+        <tr>
+            <th>Username</th>
+            <th>Date</th>
+            <th>Doctorname</th>
+        </tr>
+        {% for feature1 in feature %}
+        <tr>
+            <td>{{feature1.username}}</td>
+            <td>{{feature1.Date_of_appointment}}</td>
+            <td>{{feature1.Docname}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
